@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* thanh điều hướng trên */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(238, 84, 64);
+    padding: 1rem;
+    width: 100%;
+}
+
+.Logo {
+    max-height: 50px;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-menu li {
+    position: relative;
+    margin-left: 1rem;
+}
+
+.navbar-menu a {
+    
+    color: black;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+.navbar-menu a:hover {
+    background-color: aliceblue;
+    border-radius: 5px;
+}
+
+/* Thân */
+.container {
+    margin-top: 2px;
+    display: flex;
+    background-color: antiquewhite;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.sidebar {
+    width: 50px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    height: 100%;
+    overflow-y: auto;
+    transition: width 0.3s;
+}
+
+.sidebar-menu {
+    display: none;
+    padding: 0;
+    margin-top: 1rem; /* Thêm margin top để cách top sidebar */
+}
+
+.sidebar-menu.active {
+    display: block;
+}
+
+#sidebarToggle {
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    display: block;
+}
+
+.sidebar-menu li {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    width: 100%; /* Để các menu chiếm toàn bộ chiều rộng của sidebar */
+    box-sizing: border-box; /* Để padding không làm thay đổi chiều rộng */
+}
+
+.sidebar-menu a:hover {
+    background-color: aqua;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: antiquewhite;
+}
+
+/*nội dung trong các content-item */
+.content-item {
+    display: none;
+    height: 100%; /* Để nội dung chiếm hết chiều cao của content */
+    width: 100%;
+}

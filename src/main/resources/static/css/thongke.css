@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+/* thanh điều hướng trên */
+.navbar{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(238, 84, 64);
+    padding: 1rem;
+    width: 100%;
+}
+
+.Logo{
+    max-height: 50px;
+}
+
+.navbar-menu{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-menu li{
+    position: relative;
+    margin-left: 1rem;
+}
+
+.navbar-menu a{
+    color: black;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+.navbar-menu a:hover{
+    background-color: aliceblue;
+    border-radius: 5px;
+}

@@ -1,0 +1,196 @@
+body{
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+/* thanh điều hướng trên */
+.navbar{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(238, 84, 64);
+    padding: 1rem;
+    width: 100%;
+}
+
+.Logo{
+    max-height: 50px;
+}
+
+.navbar-menu{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-menu li{
+    position: relative;
+    margin-left: 1rem;
+}
+
+.navbar-menu a{
+    color: black;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+.navbar-menu a:hover{
+    background-color: aliceblue;
+    border-radius: 5px;
+}
+/**/
+.Timkiem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(200, 155, 155, 0.1);
+    padding: 5px 10px;
+    width: 300px;
+    height: 40px;
+    margin: 0 auto;
+    border: #ccc solid 0.5px;
+}
+#search {
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+.Timkiem img{
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+}
+/*Button*/
+button {
+    width: 300px;
+    margin: 2px 0 2px 2px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.7em 2em;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+    color: #040404;
+    text-decoration: none;
+    transition: 0.3s ease all;
+    z-index: 1;
+  }
+  
+  button:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background-color: #e8774b;
+    z-index: -1;
+  }
+  
+  button:hover, button:focus {
+    color: white;
+  }
+  
+  button:hover:before, button:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
+  
+  button:active {
+    transform: scale(0.9);
+  }
+
+  /**/
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: #ccc;
+    display: grid;
+}
+
+.content {
+    margin-left: 10px ;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; 
+    gap: 20px;
+}
+
+.avatar {
+    width: 100px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.text-info {
+    margin-left: 15px;
+}
+
+.info h2 {
+    margin-top: 0;
+}
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 100%;
+}
+.btn-capnhat {
+    padding: 8px 16px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.btn-capnhat:hover{
+    background-color: #fae6e6;
+    color: #010101;
+}
+.btn-xoa:hover{
+    background-color: #fd0000;
+    color: #100000;
+}
+.btn-xoa {
+    padding: 8px 16px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #ef730d;
+    color: #fff;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+
+
+
+

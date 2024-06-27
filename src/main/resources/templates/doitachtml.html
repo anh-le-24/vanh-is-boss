@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đối tác</title>
+    <link rel="stylesheet" th:href="@{/css/doitac.css}">
+</head>
+<body>
+     <!-- Thanh điều hướng trên -->
+     <nav class="navbar">
+        <div class="Logo">
+            <a href="#">VANH</a>
+        </div>
+        <ul class="navbar-menu">
+            <li><a th:href="@{/admin/home}">Quản lý website</a></li>
+            <li><a th:href="@{/nguoidung/tatca}">Khách hàng</a></li>          
+            <li><a th:href="@{/doitac}">Đối tác</a></li>
+            <li><a th:href="@{/admin/thongke}">Thống kê</a></li>
+        </ul>
+    </nav>
+
+    <h2>Danh sách đối tác</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Mã đối tác</th>
+                <th>Mã người dùng</th>
+                <th>Tên nhà hàng</th>
+                <th>Số nhà hàng</th>
+                <th>Đường</th>
+                <th>Quận</th>
+                <th>Thành phố</th>
+                <th>Mô tả</th>
+                <th>Link liên kết</th>
+                <th>Link Google Map</th>
+                <th>Hóa đơn TB</th>
+                <th>Giờ mở cửa</th>
+                <th>Giờ đóng cửa</th>
+                <th>Số chỗ ngồi</th>
+                <th>Mã đơn vị</th>
+                <th>Ngày đăng ký</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="doitac : ${doitacs}" th:if="${doitac != null}">
+                <td th:text="${doitac.madt}"></td>
+                <td th:text="${doitac.mand}"></td>
+                <td th:text="${doitac.tennhahang}"></td>
+                <td th:text="${doitac.sonhahang}"></td>
+                <td th:text="${doitac.duongnh}"></td>
+                <td th:text="${doitac.quannh}"></td>
+                <td th:text="${doitac.thanhphonh}"></td>
+                <td th:text="${doitac.mota}"></td>
+                <td th:text="${doitac.linklienket}"></td>
+                <td th:text="${doitac.linkggmap}"></td>
+                <td th:text="${doitac.hoadontb}"></td>
+                <td th:text="${#dates.format(doitac.giomo, 'HH:mm')}"></td>
+                <td th:text="${#dates.format(doitac.giodong, 'HH:mm')}"></td>
+                <td th:text="${doitac.sochongoi}"></td>
+                <td th:text="${doitac.madv}"></td>
+                <td th:text="${#dates.format(doitac.ngaydk, 'dd/MM/yyyy')}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

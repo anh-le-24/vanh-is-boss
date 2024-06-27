@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xin chào chủ tịch</title>
+    <link rel="stylesheet" th:href="@{/css/admin.css}">
+    <!-- Thêm đường dẫn tới file CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Thanh điều hướng trên -->
+    <nav class="navbar">
+        <div class="Logo">
+            <a href="#">VANH</a>
+        </div>
+        <ul class="navbar-menu">
+            <li><a th:href="@{/admin/home}">Quản lý website</a></li>
+            <li><a th:href="@{/nguoidung/tatca}">Khách hàng</a></li>          
+            <li><a th:href="@{/doitac}">Đối tác</a></li>
+            <li><a th:href="@{/admin/thongke}">Thống kê</a></li>
+        </ul>
+    </nav>
+
+    <!-- Phần thân -->
+    <div class="container">
+        <div class="sidebar">
+            <span id="sidebarToggle" onclick="toggleSidebar()">☰</span>
+            <ul id="sidebarMenu" class="sidebar-menu">
+                <li><a href="#" data-target="Themsanpham">Thêm Sản Phẩm</a></li>
+                <li><a href="#" data-target="Themnhahang">Thêm Nhà Hàng</a></li>
+                <li><a href="#" data-target="Themdichvu">Thêm Dịch Vụ</a></li>
+            </ul>
+        </div>
+
+        <div class="content" id="content">
+            <div id="ThemsanphamContent" class="content-item" style="display:none;">
+                <p> Nội dung thêm sản phẩm </p>
+                <input type="text">
+            </div>
+            <div id="ThemnhahangContent" class="content-item" style="display:none;">Nội dung Thêm Nhà Hàng</div>
+            <div id="ThemdichvuContent" class="content-item" style="display:none;">Nội dung Thêm Dịch Vụ</div>
+        </div>
+    </div>
+
+    <!-- Đoạn mã JavaScript -->
+    <script th:src="@{/js/admin.js}"></script>
+
+</body>
+</html>

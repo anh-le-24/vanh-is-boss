@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lỗi</title>
+</head>
+<body>
+    <h1>Trang Lỗi</h1>
+    <div th:if="${#strings.isEmpty(errorMessage)}">
+        <p>Có sự cố không mong muốn xảy ra.</p>
+    </div>
+    <div th:unless="${#strings.isEmpty(errorMessage)}">
+        <p th:text="${errorMessage}">Có sự cố không mong muốn xảy ra.</p>
+    </div>
+</body>
+</html>

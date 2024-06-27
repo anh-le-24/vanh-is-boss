@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thống kê</title>
+    <link rel="stylesheet" th:href="@{/css/thongke.css}">
+</head>
+<body>
+     <!-- thanh điều hướng trên -->
+     <nav class="navbar">
+        <div class="Logo">
+            <a href="#">VANH</a>
+        </div>
+        <ul class="navbar-menu">
+            <li><a th:href="@{/admin/home}">Quản lý website</a></li>
+            <li><a th:href="@{/admin/khachhang}">Khách hàng</a></li>            
+            <li><a th:href="@{/admin/doitac}">Đối tác</a></li>
+            <li><a th:href="@{/admin/thongke}">Thống kê</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
