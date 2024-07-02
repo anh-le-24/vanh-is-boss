@@ -20,4 +20,6 @@ public class DoitacController {
         model.addAttribute("doitacs",doitacService.getAllDoitac());
         return "doitachtml";
     }
+
+    
 }
