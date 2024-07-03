@@ -31,5 +31,9 @@ public class NguoidungService {
         nguoidungRepository.deleteById(id);
     }
 
+    public List<Nguoidung> searchNguoidung(String keyword) {
+        return nguoidungRepository.search(keyword);
+    }
+
 
 }

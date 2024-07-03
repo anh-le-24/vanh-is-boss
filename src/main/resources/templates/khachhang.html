@@ -15,18 +15,20 @@
         </div>
         <ul class="navbar-menu">
             <li><a th:href="@{/admin/home}">Quản lý website</a></li>
-            <li><a th:href="@{/admin/khachhang}">Khách hàng</a></li>            
-            <li><a th:href="@{/admin/doitac}">Đối tác</a></li>
+            <li><a th:href="@{/nguoidung/tatca}">Khách hàng</a></li>            
+            <li><a th:href="@{/doitac/tatca}">Đối tác</a></li>
             <li><a th:href="@{/admin/thongke}">Thống kê</a></li>
         </ul>
     </nav>
 
     <div class="Timkiem">
         <input type="text" id="search" placeholder="Tìm kiếm...">
-        <img th:src="@{/img/search.png}" alt="Search image">
+        <button type="button" onclick="searchNguoidung()">Tìm</button>
     </div>
-
-    <button type="button" onclick="toggleForm('themKhachHangForm')">Thêm khách hàng</button>
+    <div id="searchResults"></div>
+    
+    
+    <div class="btn btn-them" onclick="toggleForm('themKhachHangForm')">Thêm khách hàng</div>
     
     <!-- Form thêm khách hàng -->
     <div id="themKhachHangForm" style="display:none;">
@@ -96,15 +98,14 @@
                 <td th:text="${nguoidung.solandatban}"></td>
                 <td th:text="${nguoidung.mapq}"></td>
                 <td>
-                    <button type="button" th:onclick="'xemChiTiet(' + ${nguoidung.mand} + ')'">Xem chi tiết</button>
-                    <button type="button" th:onclick="'suaNguoiDung(' + ${nguoidung.mand} + ')'">Sửa</button>
-                    <!--<a th:href="@{/nguoidung/capnhat/{id}(id=${nguoidung.id})}" class="btn-capnhat">sửa</a>-->
-                    <button type="button" th:onclick="'xoaNguoiDung(' + ${nguoidung.mand} + ')'">Xóa</button>
+                    <div class="btn btn-chitiet" th:onclick="'xemChiTiet(' + ${nguoidung.mand} + ')'">Xem chi tiết</div>
+                    <div class="btn btn-sua" th:onclick="'suaNguoiDung(' + ${nguoidung.mand} + ')'">Sửa</div>
+                    <div class="btn btn-xoa" th:onclick="'xoaNguoiDung(' + ${nguoidung.mand} + ')'">Xóa</div>
                 </td>
             </tr>
         </tbody>
     </table>
-    </div>
+    </div> 
     
     <!-- Form sửa người dùng -->
     <div id="suaNguoiDungForm" style="display:none;">
@@ -165,6 +166,7 @@
             <button type="button" onclick="quaylai()">quay lại</button>
         </form>
     </div>
+
     <div th:if="${successMessage}">
         <div class="alert alert-success">
             <p th:text="${successMessage}"></p>

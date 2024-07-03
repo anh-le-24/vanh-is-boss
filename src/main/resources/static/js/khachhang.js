@@ -100,3 +100,41 @@ function quaylaithem() {
     document.getElementById('themKhachHangForm').style.display = 'none';
     document.getElementsByClassName('danhsachnguoidung')[0].style.display = 'block';
 }
+//tìm kiếm
+function searchNguoidung() {
+    var keyword = $('#search').val();
+    $.ajax({
+        type: 'GET',
+        url: '/nguoidung/timkiem',
+        data: { keyword: keyword },
+        success: function(response) {
+            var resultsDiv = $('#searchResults');
+            resultsDiv.empty(); // Clear previous results
+            if (response.length === 0) {
+                resultsDiv.append('<p>Không tìm thấy kết quả nào.</p>');
+            } else {
+                response.forEach(function(nguoidung) {
+                    var card = `
+                        <div class="card">
+                            <img src="https://via.placeholder.com/150" alt="Ảnh người dùng">
+                            <div class="card-content">
+                                <h2>${nguoidung.hoten}</h2>
+                                <p><strong>Số Điện Thoại:</strong> ${nguoidung.sdt}</p>
+                                <p><strong>Địa Chỉ:</strong> ${nguoidung.sonha} ${nguoidung.duong}, ${nguoidung.quan}, ${nguoidung.thanhpho}</p>
+                                <p><strong>Mã Người Dùng:</strong> ${nguoidung.mand}</p>
+                            </div>
+                            <div class="card-actions">
+                                <div id="btn-chitiet" onclick="xemChiTiet(${nguoidung.mand})">Xem chi tiết</div>
+                                <div id="btn-sua" onclick="suaNguoiDung(${nguoidung.mand})">Sửa</div>
+                                <div id="btn-xoa" onclick="xoaNguoiDung(${nguoidung.mand})">Xóa</div>
+                            </div>
+                        </div>`;
+                    resultsDiv.append(card);
+                });
+            }
+        },
+        error: function(error) {
+            console.error('Error:', error);
+        }
+    });
+}
